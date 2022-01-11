@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+</head>
+<body>
+	<div id="menu" class="big-bg">
+        <header class="page-header wrapper">
+			<a href="index.html"><img class="logo" src="images/FRENCHEEE.png" alt="Frencheee"></a>
+            <!-- <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ ホーム"></a></h1> -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallary.html">Gallary</a></li>
+                    <li><a href="shoppingcart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+		<!-- <div class="shoppingcart-content wrapper">
+            <h2 class="page-title">Shopping Cart</h2>
+        </div> -->
+    </div>
+	<div class="container">
+		<section id="cart"> 
+			<article class="product">
+				<header>
+					<a class="remove">
+						<img src="images/Frencheee04.jpeg" alt="">
+						<h3>Remove</h3>
+					</a>
+				</header>
+
+				<div class="content">
+					<h1>Frencheee Black</h1>
+
+					オーソドックスなマットブラック
+
+					<!-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div> -->
+					<!-- <div style="top: 43px" class="type small">XXL</div> -->
+				</div>
+
+				<footer class="content">
+					<span class="qt-minus">-</span>
+					<span class="qt">1</span>
+					<span class="qt-plus">+</span>
+
+					<h2 class="full-price">
+						3500
+					</h2>
+
+					<h2 class="price">
+						3500
+					</h2>
+				</footer>
+			</article>
+
+			<article class="product">
+				<header>
+					<a class="remove">
+						<img src="images/Frencheee05.jpeg" alt="">
+
+						<h3>Remove</h3>
+					</a>
+				</header>
+
+				<div class="content">
+
+					<h1>Frencheee Silver</h1>
+
+                    オーソドックスなマットブラック
+
+					<!-- <div title="You have selected this product to be shipped in the color red." style="top: 0" class="color red"></div>
+					<div title="You have selected this product to be shipped sized Small."  style="top: 43px" class="type small">Small</div> -->
+				</div>
+
+				<footer class="content">
+					
+					<span class="qt-minus">-</span>
+					<span class="qt">1</span>
+					<span class="qt-plus">+</span>	
+					<h2 class="full-price">
+						3800
+					</h2>
+					<h3 class="price">
+						3800
+					</h3>
+				</footer>
+			</article>
+
+			<article class="product">
+				<header>
+					<a class="remove">
+						<img src="images/Frencheee06.jpeg" alt="">
+
+						<h3>Remove</h3>
+					</a>
+				</header>
+
+				<div class="content">
+
+					<h1>Frencheee Pink Gold</h1>
+
+					オーソドックスなマットブラック
+
+					<!-- <div title="You have selected this product to be shipped in the color blue." style="top: 0" class="color blue"></div>
+					<div style="top: 43px" class="type small">Large</div> -->
+				</div>
+
+				<footer class="content">
+					
+					<span class="qt-minus">-</span>
+					<span class="qt">1</span>
+					<span class="qt-plus">+</span>
+
+					<h2 class="full-price">
+						4000
+					</h2>
+
+					<h2 class="price">
+						4000
+					</h2>
+				</footer>
+			</article>
+
+		</section>
+
+	</div>
+
+	<footer id="site-footer">
+		<div class="container clearfix">
+
+			<div class="left">
+				<h2 class="subtotal">Subtotal :  ¥<span>22800</span></h2>
+				<h3 class="tax">Taxes (10%) :  ¥<span>1140</span></h3>
+				<h3 class="shipping">Shipping :  ¥<span>1000</span></h3>
+			</div>
+
+			<div class="right">
+				<h1 class="total">Total: ¥<span>24940</span></h1>
+				<a class="btn">Checkout</a>
+				<!-- <form action="{{ asset('pay') }}" method="POST">
+					<script
+						src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						data-key="{{ env('STRIPE_KEY') }}"
+						data-amount="100"
+						data-name="Frencheee"
+						data-label="Checkout"
+						data-description="product"
+						data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+						data-locale="auto"
+						data-currency="JPY">
+					</script>
+				   </form> -->
+			</div>
+		</div>
+		<footer>
+			<div class="wrapper">
+				<p><small>&copy; 2022 Ryutaro Kamada </small></p>
+			</div>
+		</footer>
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+var check = false;
+
+function changeVal(el) {
+	console.log("yes");
+  var qt = parseFloat(el.parent().children(".qt").html());
+//   console.log(qt);
+  var price = Number(parseFloat(el.parent().children(".price").html()));
+  console.log(el);
+  console.log((el.parent()));
+  console.log((el.parent().children(".price")));
+  console.log((el.parent().children(".price").html()));
+  var eq = Math.round(price * qt);
+//   console.log(eq);
+  
+  el.parent().children(".full-price").html( eq );
+  
+  changeTotal();			
+}
+
+function changeTotal() {
+  
+  var price = 0;
+  
+  $(".full-price").each(function(index){
+    price += parseFloat($(".full-price").eq(index).html());
+  });
+  
+  price = Math.round(price);
+  console.log(price);
+  console.log(price * 0.10);
+  var tax = Math.round(price * 0.10);
+  console.log(tax);
+  var shipping = parseFloat($(".shipping span").html());
+  var fullPrice = Math.round((price + tax + shipping) *100) / 100;
+  
+  if(price == 0) {
+    fullPrice = 0;
+  }
+  
+  $(".subtotal span").html(price);
+//   toLocaleString(price);
+  $(".tax span").html(tax);
+//   toLocaleString(tax);
+  $(".total span").html(fullPrice);
+//   toLocaleString(fullPrice);
+}
+
+$(document).ready(function(){
+  
+  $(".remove").click(function(){
+    var el = $(this);
+    el.parent().parent().addClass("removed");
+    window.setTimeout(
+      function(){
+        el.parent().parent().slideUp('fast', function() { 
+          el.parent().parent().remove(); 
+          if($(".product").length == 0) {
+            if(check) {
+              $("#cart").html("<h1>The shop does not function, yet!</h1><p>Are you cool?<br>if yes, please cleck <a href=bootstrap/checkout/checkout.html>xxx</a><br>   Thank you!</p>");
+            } else {
+              $("#cart").html("<h1>No products!</h1>");
+            }
+          }
+          changeTotal(); 
+        });
+      }, 200);
+  });
+  
+  $(".qt-plus").click(function(){
+    $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
+    
+    $(this).parent().children(".full-price").addClass("added");
+    
+    var el = $(this);
+    window.setTimeout(function(){el.parent().children(".full-price").removeClass("added"); changeVal(el);}, 150);
+  });
+  
+  $(".qt-minus").click(function(){
+    
+    child = $(this).parent().children(".qt");
+    
+    if(parseInt(child.html()) > 1) {
+      child.html(parseInt(child.html()) - 1);
+    }
+    
+    $(this).parent().children(".full-price").addClass("minused");
+    
+    var el = $(this);
+    window.setTimeout(function(){el.parent().children(".full-price").removeClass("minused"); changeVal(el);}, 150);
+  });
+  
+  window.setTimeout(function(){$(".is-open").removeClass("is-open")}, 1200);
+  
+  $(".btn").click(function(){
+    check = true;
+    $(".remove").click();
+  });
+});
+</script>
+<!-- shoppin cart end -->
+<!-- <script src="js/script.js"></script>  -->
+</body>
+</html>
